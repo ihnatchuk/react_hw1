@@ -1,0 +1,14 @@
+.character-wrap{
+    display:flex;
+    column-gap: 30px;
+    background-color: azure;
+    border: 1px solid silver;
+    box-shadow: silver;
+    padding: 15px;
+}
+.character-info{
+    width: 300px;
+}
+.character-info h2{
+    margin: 0 1rem 2rem;
+}
