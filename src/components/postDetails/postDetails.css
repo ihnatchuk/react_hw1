@@ -1,0 +1,10 @@
+.post-details{
+    min-height: 140px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #000;
+    position:fixed;
+    top:0;
+    background-color: azure;
+
+}

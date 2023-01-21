@@ -1,11 +1,14 @@
 import './App.css';
 
+import {Posts} from "./components";
+
 const App=()=> {
   return (
     <div className="App">
-          My app
+          <Posts/>
     </div>
   );
 }
 
 export {App};
+
