@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Post = ({post,setPostId}) => {
+
     const {id, title}=post
+
     return (
         <div>
             <div className={'post'}>
