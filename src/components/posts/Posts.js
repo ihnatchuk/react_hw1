@@ -9,7 +9,9 @@ const [posts, setPosts]=useState([]);
 const [postId, setPostId]=useState(null);
 
     useEffect(()=>{
-        getPosts().then(posts=>setPosts(posts))},[]);
+        getPosts().then(posts=>setPosts(posts))
+    },[]);
+
     return (
         <div>
             <div className={'post-details'}>
