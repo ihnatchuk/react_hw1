@@ -1,27 +1,14 @@
-import React, {useEffect, useState} from 'react';
-
 import './postDetails.css'
-import {getPost} from "../../services";
 
-const PostDetails = ({ postId }) => {
+const PostDetails = ({ postDetails } ) => {
 
-    const [post, setPost] = useState(null);
-
-    useEffect(() => {
-        getPost(postId).then(value => setPost(value))
-    },[postId])
-
+    const {id, userId, title, body} = postDetails
     return (
-        <>
-            {post && (
                 <div >
-                    <h2>{post.id}. userId: {post.userId}</h2>
-                    <h3>{post.title}</h3>
-                    <p>{post.body}</p>
+                    <h2>{id}. userId: {userId}</h2>
+                    <h3>{title}</h3>
+                    <p>{body}</p>
                 </div>
-            )}
-        </>
-
     );
 };
 

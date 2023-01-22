@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = ({post,setPostId}) => {
+const Post = ({ post,setPostId }) => {
 
     const {id, title}=post
 

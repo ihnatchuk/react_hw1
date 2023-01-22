@@ -1,22 +1,28 @@
 import React, {useEffect, useState} from 'react';
 
 import {Post,PostDetails} from "../../components";
-import {getPosts} from "../../services";
+import {postService} from "../../services/postService";
+
 
 const Posts = () => {
 
 const [posts, setPosts]=useState([]);
 const [postId, setPostId]=useState(null);
+const [postDetails, setPostDetails]=useState(null);
 
     useEffect(()=>{
-        getPosts().then(posts=>setPosts(posts))
+        postService.getAll().then(value=>value.data).then(value=>setPosts([...value]))
     },[]);
+
+    useEffect(()=>{
+        postId && postService.getPost(postId).then(value=>value.data).then(value=>setPostDetails({...value}))
+    },[postId]);
 
     return (
         <div>
             <div className={'post-details'}>
                 <h2>Post details:</h2>
-                {postId&&<PostDetails postId={postId}/>}
+                {postDetails&&<PostDetails postDetails={postDetails}/>}
             </div>
 
             <h2>Posts:</h2>
