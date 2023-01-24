@@ -1,8 +1,14 @@
 import './App.css';
-import React from "react";
+import React, {useState} from "react";
 
-import {Users} from "./components/Users";
+import {Users} from "./components";
+import {Posts} from "./components";
+
 const App=()=> {
+
+    const [posts, setPosts] = useState([]);
+
+
 
   return (
 
@@ -21,7 +27,7 @@ const App=()=> {
         </div>
 
         <div className={'posts'}>
-
+            <Posts key={posts.id} posts={posts}/>
         </div>
 
     </div>
