@@ -17,7 +17,7 @@ function App() {
   return (
       <div className="App">
         {
-          characters.map( person => <Character person={person} /> )
+          characters.map( person => <Character key={person.id} person={person} /> )
         }
       </div>
   );
