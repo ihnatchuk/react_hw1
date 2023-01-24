@@ -1,6 +1,8 @@
 import './App.css';
-import Character from "./components/character/Character";
+import {Character} from "./components/character/Character";
+
 function App() {
+
   const characters = [
     {
       "id": 1,
@@ -665,22 +667,11 @@ function App() {
       "created": "2017-11-04T22:34:53.659Z"
     }
   ];
+
   return (
       <div className="App">
         {
-          characters.map(person=>{
-            const {id, name, status, species, gender, image}=person;
-            return (
-                <Character
-                    id={id}
-                    name={name}
-                    status={status}
-                    species={species}
-                    gender={gender}
-                    image={image}
-                />
-            )
-          })
+          characters.map( person => <Character person={person} /> )
         }
       </div>
   );

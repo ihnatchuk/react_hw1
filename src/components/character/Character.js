@@ -1,5 +1,8 @@
-import './character.css'
-function Character({id, name, status, species, gender, image}){
+import './character.css';
+function Character({ person }){
+
+    const {id, name, status, species, gender, image}=person
+
     return (
         <div className={'character-wrap'}>
             <div className='character-pic'>
@@ -15,4 +18,4 @@ function Character({id, name, status, species, gender, image}){
         </div>
     );
 }
-export default Character;
+export {Character};
