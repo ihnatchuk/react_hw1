@@ -1,3 +1,5 @@
-export const characterService=()=>{
-    return fetch('https://rickandmortyapi.com/api/character').then(value => value.json())
+import {axiosService} from "./axiosService";
+
+export const characterService={
+    getAll:()=>axiosService.get('/character'),
 }
