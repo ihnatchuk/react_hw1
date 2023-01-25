@@ -1,0 +1,6 @@
+.user{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    padding: 10px 20px;
+}

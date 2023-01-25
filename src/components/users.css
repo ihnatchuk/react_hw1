@@ -1,0 +1,12 @@
+.users{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px #545462;
+    row-gap: 10px;
+}
+.users-list, .user-details{
+    width: 50%;
+}
+.users-list{
+    border-right: solid 1px black;
+}

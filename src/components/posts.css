@@ -1,0 +1,10 @@
+.posts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 5px;
+    row-gap: 15px;
+}
+.blank{
+    display: none;
+}
