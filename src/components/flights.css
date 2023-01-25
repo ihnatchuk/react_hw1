@@ -1,0 +1,8 @@
+.flights{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+
+    background-color: #404646;
+}
