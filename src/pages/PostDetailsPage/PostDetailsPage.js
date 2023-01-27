@@ -1,11 +1,14 @@
 import React from 'react';
 
 import {PostDetails} from "../../components";
+import {useParams} from "react-router-dom";
 
 export const PostDetailsPage = () => {
+    const {postId}=useParams();
+
     return (
         <div>
-            <PostDetails/>
+            <PostDetails postId={postId}/>
         </div>
     );
 };

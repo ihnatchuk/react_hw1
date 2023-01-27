@@ -13,9 +13,9 @@ const App=()=> {
               <Route path={'/'} element={<MainLayout/>}>
                   <Route index element={ <HomePage/> } />
                   <Route path={'users'} element={ <UsersPage/> } />
-                  <Route path={'posts'} element={ <PostsPage/> } />
-                  <Route path={'posts/:postId'} element={ <PostDetailsPage/> } />
-
+                  <Route path={'posts'} element={<PostsPage/>}>
+                      <Route path={':postId'} element={ <PostDetailsPage/> } />
+                  </Route>
                   <Route path={'about'} element={ <AboutPage/> } />
               </Route>
 

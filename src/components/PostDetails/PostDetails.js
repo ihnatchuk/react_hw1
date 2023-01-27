@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from "react-router-dom";
 
 import {postService} from "../../api";
 
-export const PostDetails = () => {
-    const {postId}=useParams()
+export const PostDetails = ({postId}) => {
+
     const [post, setPost]=useState(null)
 
     useEffect(()=>{
