@@ -1,8 +1,8 @@
-import {axiosService} from "./axiosService";
 import {urls} from "../configs";
+import {axiosService} from "./axiosService";
 
 const postService={
-    getAll:()=>axiosService.get('/posts'),
+    getAll:()=>axiosService.get(urls.posts),
     getById:(id)=>axiosService.get(`${urls.posts}/${id}`)
 }
 

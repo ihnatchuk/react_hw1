@@ -1,17 +1,24 @@
-import React from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {postService} from "../../api/postService";
 
-export const Post = ({post}) => {
-    const {id, userId, title}=post
+export const Post = ({postId}) => {
+    const [post,setPost]=useState(null)
 
-    const navigate=useNavigate()
+    useEffect(()=>{
+        postService.getById(postId).then(({data})=>setPost(data))
+
+    },[postId])
 
     return (
-        <div className={'post'} >
-            <h2>{id}. UserId: {userId}</h2>
-            <h3>{title}</h3>
-            {/*<Link to={id.toString()} state={{...post}}>Post Details</Link>*/}
-            <button onClick={()=>navigate(id.toString(),{state:post})}>Post Details</button>
+        <div className={'Post'}>
+            {
+                post&&
+                    <>
+                        <h2>{post.id}. UserId:{post.userId}</h2>
+                        <h3>{post.title}</h3>
+                        <p>{post.body}</p>
+                    </>
+            }
         </div>
     );
 };
