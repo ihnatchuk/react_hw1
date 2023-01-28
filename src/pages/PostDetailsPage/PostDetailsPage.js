@@ -1,14 +1,14 @@
 import React from 'react';
 
 import {PostDetails} from "../../components";
-import {useParams} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 
 export const PostDetailsPage = () => {
     const {postId}=useParams();
 
+    const {state}=useLocation();
+
     return (
-        <div>
-            <PostDetails postId={postId}/>
-        </div>
+            <PostDetails postId={postId} state={state}/>
     );
 };

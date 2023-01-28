@@ -7,7 +7,7 @@ import {MainLayout} from "./layouts";
 
 const App=()=> {
   return (
-      <div>
+      <>
           <Routes>
 
               <Route path={'/'} element={<MainLayout/>}>
@@ -22,7 +22,7 @@ const App=()=> {
                   <Route path={'*'} element={ <NotFoundPage/> } />
 
           </Routes>
-      </div>
+      </>
 
   );
 }

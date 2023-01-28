@@ -4,7 +4,7 @@ import {Header} from "../components";
 
 export const MainLayout = () => {
     return (
-        <div>
+        <div className={'MainLayout'}>
             <Header/>
             <Outlet/>
         </div>
