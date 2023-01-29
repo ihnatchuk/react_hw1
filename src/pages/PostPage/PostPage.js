@@ -1,15 +1,17 @@
 import React from 'react';
-import {Post} from "../../components";
 import {useLocation} from "react-router-dom";
+
+import {Post} from "../../components";
+import css from './PostPage.module.css'
+
 
 export const PostPage = () => {
     const {state}=useLocation()
 
     return (
-        <>
-            <h2>Post:</h2>
+        <div className={css.PostPage}>
             <Post postId={state}/>
-        </>
+        </div>
 
     );
 };

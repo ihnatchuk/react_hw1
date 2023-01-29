@@ -1,0 +1,13 @@
+.Post {
+    background-color: #abffd9;
+    padding: 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    position: fixed;
+    top: 50px;
+}
+.gapBeforeComments{
+    height: 110px;
+}

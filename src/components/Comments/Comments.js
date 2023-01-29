@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import { commentsService } from "../../api";
 import {Comment} from "../Comment/Comment";
+import css from './Comments.module.css'
 
 export const Comments = () => {
     const [comments,setComments]=useState([])
@@ -11,8 +12,7 @@ export const Comments = () => {
     },[])
 
     return (
-        <div className={'Comments'}>
-            <h2>Comments:</h2>
+        <div className={css.Comments}>
             {
                 comments.map(comment => <Comment key={comment.id} comment={comment}/>)
             }

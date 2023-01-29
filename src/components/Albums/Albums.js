@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {albumsService} from "../../api";
 import {Album} from "../Album/Album";
+import css from './Albums.module.css'
 
 export const Albums = () => {
     const [albums,setAlbums]=useState([])
@@ -11,7 +12,7 @@ export const Albums = () => {
     },[])
 
     return (
-        <div className={'Albums'}>
+        <div className={css.Albums}>
             {
                 albums.map(album => <Album key={album.id} album={album}/>)
             }

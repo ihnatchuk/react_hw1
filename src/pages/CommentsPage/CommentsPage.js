@@ -1,11 +1,12 @@
 import React from 'react';
-import {Comments} from "../../components";
 import {Outlet} from "react-router-dom";
 
+import {Comments} from "../../components";
 export const CommentsPage = () => {
     return (
         <>
             <Outlet/>
+            <h2>Comments:</h2>
             <Comments/>
         </>
 

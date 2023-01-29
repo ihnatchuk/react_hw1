@@ -1,9 +1,13 @@
-.Header{
+.Header {
     height: 50px;
     background-color: silver;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+
+    position: fixed;
+    top:0;
 }
 .Header a{
     font-size: 20px;
