@@ -11,6 +11,7 @@ const App=()=> {
           <Routes>
 
               <Route path={'/'} element={<MainLayout/>}>
+                  <Route index element={ <TodosPage/> } />
                   <Route path={'todos'} element={ <TodosPage/> } />
                   <Route path={'albums'} element={ <AlbumsPage/> } />
                   <Route path={'comments'} element={<CommentsPage/>}>
