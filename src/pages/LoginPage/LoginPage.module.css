@@ -1,0 +1,8 @@
+.InputForm{
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 10px;
+}

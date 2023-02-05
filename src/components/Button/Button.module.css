@@ -2,13 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20px;
+    height: 25px;
     padding: 5px 20px;
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #ff8a00;
     color:white;
-    /*width:100px*/
 }
 .Button:hover{
     background-color: #c97213;

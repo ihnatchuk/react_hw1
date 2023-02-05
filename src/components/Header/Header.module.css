@@ -19,4 +19,9 @@
     color: blue;
     font-weight: 700;
 }
+.UserLogin{
+    display: flex;
+    column-gap: 5px;
+    align-items: center;
+}
 
