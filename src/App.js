@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import React from "react";
 
 import './App.css';
@@ -11,7 +11,7 @@ const App=()=> {
           <Routes>
 
               <Route path={'/'} element={<MainLayout/>}>
-                  <Route index element={ <TodosPage/> } />
+                  <Route index element={ <Navigate to={'todos'} /> } />
                   <Route path={'todos'} element={ <TodosPage/> } />
                   <Route path={'albums'} element={ <AlbumsPage/> } />
                   <Route path={'comments'} element={<CommentsPage/>}>
