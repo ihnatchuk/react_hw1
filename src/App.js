@@ -1,46 +1,64 @@
 import './App.css';
-import {useReducer} from "react";
+import {useReducer, useRef} from "react";
 
 const App=()=> {
 
+    const catName=useRef();
+    const dogName=useRef();
+
 
     const reducer=(state, action)=> {
+        let catId;
 
         switch (action.type) {
-            case 'INC1':
-                return {...state,count1:state.count1+1}
-            case 'DEC1':
-                return {...state,count1:state.count1-1}
-            case 'INC2':
-                return {...state,count2:state.count2+1}
-            case 'DEC2':
-                return {...state,count2:state.count2-1}
-            case 'RESET':
-                return {count1:action.payload,count2:action.payload}
+            case 'CAT':
+                state.cats.length? catId = state.cats.at(-1).id+1 : catId=1;
+                return {...state,cats:[...(state.cats), {id:catId,name:catName.current.value}]}
+
+            case 'DOG':
+                return {...state,dogs:[...state.dogs,dogName.current.value]}
 
             default:
                 return {...state}
-
         }
 
     }
 
-    const initValue=()=>({ count1:0,count2:0 })
+    const initValue=()=>({ cats:[],dogs:[] })
 
     const [state,dispatch]= useReducer(reducer,null, initValue)
-  return (
+
+    return (
     <div className="App">
-        <div>Count1: {state.count1}</div>
-        <button onClick={()=>dispatch({type:'INC1'})}>Inc1</button>
-        <button onClick={()=>dispatch({type:'DEC1'})}>Dec1</button>
+        <div className={'Pets'}>
+            <div className={'cats'}>
 
-        <div>Count2: {state.count2}</div>
-        <button onClick={()=>dispatch({type:'INC2'})}>Inc2</button>
-        <button onClick={()=>dispatch({type:'DEC2'})}>Dec2</button>
+                <div className={'catInput'}>
+                    <div>Cat:</div>
+                    <input type="text" placeholder={'catName'} ref={catName}/>
+                    <button onClick={()=>dispatch({type:'CAT'})}>Add Cat</button>
+                </div>
 
-        <hr/>
+                <div className={'catsOutput'}>
+                    {state.cats.map((cat)=>{
+                        return (
+                            <div>
+                                {cat.id}. {cat.name}
+                            </div>
+                        )})
+                    }
 
-        <button onClick={()=>dispatch({type:'RESET',payload:25})}>Reset</button>
+                </div>
+
+            </div>
+
+            <div className={'dogs'}>
+                <div>Dog:</div>
+                <input type="text" placeholder={'dogName'} ref={dogName}/>
+                <button onClick={()=>dispatch({type:'DOG'})}>Add Cat</button>
+            </div>
+        </div>
+
 
     </div>
   );

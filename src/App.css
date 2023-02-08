@@ -1,3 +1,7 @@
 .App{
     text-align: center;
 }
+.Pets{
+    display: flex;
+    justify-content: space-around;
+}
