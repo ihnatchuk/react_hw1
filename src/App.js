@@ -1,9 +1,12 @@
 import './App.css';
+import {Cars, Form} from "./components";
 
 const App=()=> {
   return (
     <div className="App">
-          My app
+        <Form/>
+        <hr/>
+        <Cars/>
     </div>
   );
 }
