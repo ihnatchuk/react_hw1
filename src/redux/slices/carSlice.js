@@ -4,6 +4,8 @@ import {carService} from "../../services";
 const initialState =
     {
         cars: [],
+        prev:null,
+        next:null,
         carForUpdate: null,
         loading: null,
         errors: null
@@ -12,9 +14,9 @@ const initialState =
 
 const getAll = createAsyncThunk(
     'carSlice/getAll',
-    async (_, thunkAPI) => {
+    async ({page}, thunkAPI) => {
         try {
-            const {data} = await carService.getAll()
+            const {data} = await carService.getAll(page)
             return data
         } catch (e) {
             thunkAPI.rejectWithValue(e.response.data)
@@ -27,7 +29,7 @@ const create = createAsyncThunk(
     async ({car}, thunkAPI) => {
         try {
             await carService.create(car)
-            thunkAPI.dispatch(getAll())
+            thunkAPI.dispatch(getAll({page:1}))
 
         } catch (e) {
             thunkAPI.rejectWithValue(e.response.data)
@@ -74,7 +76,10 @@ const carSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                state.cars = action.payload
+                const {prev, next, items}=action.payload
+                state.cars = items
+                state.prev=prev
+                state.next=next
             })
 })
 
