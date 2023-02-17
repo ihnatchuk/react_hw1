@@ -3,8 +3,8 @@ import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {useDispatch, useSelector} from "react-redux";
 
-import {carValidator} from "../../validators";
 import {carActions} from "../../redux";
+import {carValidator} from "../../validators/carValidator";
 
 const Form = () => {
     const {register,handleSubmit,reset,setValue,formState:{errors, isValid}} =
